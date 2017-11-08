@@ -18,7 +18,7 @@ export function sourceIsLoading(bool) {
 export function fetchSourceDataSuccess(sources) {
     return {
         type: 'FETCH_SOURCE_DATA_SUCCESS',
-        sources: sources.sources
+        sources: sources.sources.slice(0, 10)
     };
 }
 
@@ -26,7 +26,7 @@ export function fetchSourceData(url) {
     return (dispatch) => {
         dispatch(sourceIsLoading(true));
 
-        fetch(url)
+        return fetch(url)
             .then((response) => {
                 if (!response.ok) {
                     throw Error(response.statusText);
