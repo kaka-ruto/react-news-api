@@ -6,7 +6,6 @@ import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 
 import App from './components/App.jsx';
-import SourcesContainer from './containers/sources/SourcesContainer.jsx';
 
 import configureStore from './store/configureStore';
 
@@ -14,7 +13,7 @@ const store = configureStore();
 
 render(
     <Provider store={store}>
-        <SourcesContainer />
+        <App />
     </Provider>,
     document.getElementById('app')
 );

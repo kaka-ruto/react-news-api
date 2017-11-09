@@ -1,0 +1,31 @@
+.sources {
+    float: left;
+    min-width: 30%;
+    text-align: center;
+}
+
+.articles {
+    float: right;
+    min-width: 70%;
+    text-align: center;
+}
+
+/* .articles .ui.card>.content {
+    max-height: 100%;
+    border: 1px dotted red;
+} */
+
+.articles .ui.card {
+    min-width: 90%;
+}
+
+.articles .ui.card img.ui.image {
+    max-height: 50%;
+    max-width: 70%;
+    margin-left: 17%;
+    margin-bottom: 15px;
+}
+
+.articles .ui.cards>.card {
+    flex-direction: column-reverse;
+}

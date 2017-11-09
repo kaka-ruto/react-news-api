@@ -1,13 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchSourceData } from '../../actions/sources/sourcesListActions.jsx';
-import { Container, Header, List } from 'semantic-ui-react';
+import { fetchArticleData } from '../../actions/articles/articlesListActions.jsx';
 import PropTypes from 'prop-types';
 import SourcesList from '../../components/sources/SourcesList.jsx';
 
 class SourcesContainer extends React.Component {
     componentDidMount() {
-        this.props.fetchData('http://newsapi.org/v1/sources');
+        this.props.fetchData('https://newsapi.org/v1/sources');
+    }
+
+    onSourceClick = id => e => {
+        e.preventDefault();
+        this.props.fetchArticleData(`https://newsapi.org/v1/articles?source=${id}&apiKey=e7e5240e9ad143ae9170058613e5d879`);
     }
 
     render() {
@@ -24,7 +29,7 @@ class SourcesContainer extends React.Component {
         }
 
         return (
-            <SourcesList sources={this.props.sources} />
+            <SourcesList sources={this.props.sources} onSourceClick={this.onSourceClick} />
         );
     }
 }
@@ -45,7 +50,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: (url) => dispatch(fetchSourceData(url))
+        fetchData: (url) => dispatch(fetchSourceData(url)),
+        fetchArticleData: (url) => dispatch(fetchArticleData(url))
     };
 };
 

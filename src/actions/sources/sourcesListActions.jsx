@@ -41,3 +41,10 @@ export function fetchSourceData(url) {
             .catch(() => dispatch(sourceHasErrored(true)));
     };
 }
+
+export function selectedSource(id ) {
+    return {
+        type: 'SELECTED_SOURCE',
+        id
+    };
+}

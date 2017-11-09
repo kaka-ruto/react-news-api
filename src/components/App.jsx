@@ -1,12 +1,15 @@
 import React from 'react';
-import SourcesList from './sources/SourcesList.jsx';
-import { Container } from 'semantic-ui-react';
+import SourcesContainer from '../containers/sources/SourcesContainer.jsx';
+import ArticlesContainer from '../containers/articles/articleContainer.jsx';
 
 const App = () => (
     <div>
-        <Container>
-            <SourcesList />
-        </Container>
+        <div className='sources'>
+            <SourcesContainer />
+        </div>
+        <div className='articles'>
+            <ArticlesContainer />
+        </div>
     </div>
 );
 
