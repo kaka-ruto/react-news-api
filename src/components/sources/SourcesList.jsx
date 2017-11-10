@@ -26,10 +26,10 @@ SourcesList.propTypes = {
         PropTypes.shape({
         id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired
+        // description: PropTypes.string.isRequired
         }).isRequired
   ).isRequired,
-//     onSourceClick: PropTypes.func.isRequired
+    onSourceClick: PropTypes.func.isRequired
 };
 
 export default SourcesList;
