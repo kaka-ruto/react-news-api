@@ -6,9 +6,9 @@ import Source from '../../components/sources/Source.jsx';
 import Articles from '../../components/articles/articlesAll.jsx';
 
 class ArticlesContainer extends React.Component {
-    // componentDidMount(id) {
-    //     this.props.fetchData(`https://newsapi.org/v1/articles?source=${id}&apiKey=e7e5240e9ad143ae9170058613e5d879`);
-    // }
+    componentDidMount() {
+        this.props.fetchData(`https://newsapi.org/v1/articles?source=techcrunch&apiKey=e7e5240e9ad143ae9170058613e5d879`);
+    }
 
     render() {
         if (this.props.hasErrored) {
