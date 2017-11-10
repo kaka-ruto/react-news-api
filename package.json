@@ -20,12 +20,12 @@
     "prebuild": "npm run clean-dist && npm run lint && npm run test",
     "build": "babel-watch tools/build.js && npm run open:dist",
     "test": "jest",
-    "test:CI": "babel-node tools/testCi.js",
+    "test:CI": "babel-watch tools/testCi.js",
     "test:cover": "npm run test -- --coverage ",
     "test:cover:CI": "npm run test:CI -- --coverage && cat ./coverage/lcov.info | node_modules/coveralls/bin/coveralls.js",
     "test:watch": "jest --watch",
     "open:cover": "npm run test:cover && opn ./coverage/lcov-report/index.html",
-    "analyze-bundle": "babel-node ./tools/analyzeBundle.js"
+    "analyze-bundle": "babel-watch ./tools/analyzeBundle.js"
   },
   "author": "Kibet Ruto",
   "license": "MIT",
