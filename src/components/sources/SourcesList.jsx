@@ -3,7 +3,7 @@ import { Header, List } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import Source from './Source.jsx';
 
-const SourcesList = ({ onSourceClick, sources }) => (
+export const SourcesList = ({ onSourceClick, sources }) => (
     <div>
         <Header as='h2'>All popular news in one place</Header>
         <Header as='h4'>Choose source</Header>

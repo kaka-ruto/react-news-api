@@ -1,15 +1,15 @@
-import * as reducers from './sourcesListReducers.jsx';
+import * as reducers from './articlesAllReducers.jsx';
 import * as types from '../../constants/actionTypes/allActionTypes.jsx';
 
-describe('Reducers: Sources List', () => {
+describe('Reducers: All articles', () => {
     it('returns proper initial state', () => {
-        expect(reducers.sourceHasErrored(undefined, {})).toEqual(false);
-        expect(reducers.sourceIsLoading(undefined, {})).toEqual(false);
-        expect(reducers.sources(undefined, {})).toEqual([]);
+        expect(reducers.articleHasErrored(undefined, {})).toEqual(false);
+        expect(reducers.articleIsLoading(undefined, {})).toEqual(false);
+        expect(reducers.articles(undefined, {})).toEqual([]);
       });
 
       it('returns same state for unknown action', () => {
-        expect(reducers.sources([
+        expect(reducers.articles([
           {
             "id": "abc-news-au",
             "name": "ABC News (AU)"
@@ -22,13 +22,13 @@ describe('Reducers: Sources List', () => {
       });
 
       it('adds the sources', () => {
-        expect(reducers.sources([{
+        expect(reducers.articles([{
             "id": "abc-news-au",
             "name": "ABC News (AU)"
           }],
           {
-          type: 'FETCH_SOURCE_DATA_SUCCESS',
-          sources: [{
+          type: 'FETCH_ARTICLE_DATA_SUCCESS',
+          articles: [{
             "id": "abc-news-au",
             "name": "ABC News (AU)"
           },
@@ -49,15 +49,15 @@ describe('Reducers: Sources List', () => {
       });
 
       it('should handle isLoading', () => {
-        expect(reducers.sourceIsLoading(true, {
-          type: types.SOURCE_IS_LOADING,
+        expect(reducers.articleIsLoading(true, {
+          type: types.ARTICLE_IS_LOADING,
           isLoading: false
         })).toEqual(false);
       });
 
       it('should handle hasErrored', () => {
-        expect(reducers.sourceHasErrored(false, {
-          type: types.SOURCE_HAS_ERRORED,
+        expect(reducers.articleHasErrored(false, {
+          type: types.ARTICLE_HAS_ERRORED,
           hasErrored: true
         })).toEqual(true);
       });
