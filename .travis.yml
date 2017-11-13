@@ -1,15 +1,15 @@
 language: node_js
 
-cache: yarn
+cache: npm
 
 node_js:
-  - "7"
-  - "6"
-  - "5"
-  - "4"
+  - "node"
 
-script: yarn run test:CI
+before_install:
+  - npm i -g npm
+
+script: npm run test:CI
 
 after_success:
   # Send coverage data to coveralls.
-  - yarn run test:cover:CI
+  - npm run test:cover:CI
