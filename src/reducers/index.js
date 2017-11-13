@@ -1,3 +1,9 @@
-// Set up your root reducer here...
+// This is the root reducer
  import { combineReducers } from 'redux';
- export default combineReducers;
+ import { sources, sourceHasErrored, sourceIsLoading } from './sources/sourcesListReducers.jsx';
+
+ export default combineReducers({
+     sources,
+     sourceHasErrored,
+     sourceIsLoading
+ });
