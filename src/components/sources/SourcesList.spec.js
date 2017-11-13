@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from 'enzyme';
-import SourcesList from './SourcesList.jsx';
+import {SourcesList} from './SourcesList.jsx';
 
 describe('SourcesList Component', () => {
     let onSourceClick, sources, wrapper;
@@ -21,4 +21,13 @@ describe('SourcesList Component', () => {
     it('renders the dumb component', () => {
         expect(wrapper.length).toEqual(1);
     });
+
+    it('it renders a group of card', () => {
+        expect(wrapper.find('Card.Group'));
+    });
+
+    it("renders card with it's props", () => {
+        expect(wrapper.find('List').props()).toExist;
+    });
+
 });

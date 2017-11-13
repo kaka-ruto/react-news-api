@@ -1,4 +1,4 @@
-import * as actions from './sourcesListActions.jsx';
+import * as actions from './articlesListActions.jsx';
 import * as types from '../../constants/actionTypes/allActionTypes.jsx';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
@@ -20,10 +20,10 @@ describe('Actions::Thunk Async actions', () => {
         fetchMock.restore();
     });
 
-    // it('handles fetchSources success', () => {
-    //     const store = mockStore({ sources: [] });
-    //     const url = 'http://newsapi.org/v1/sources';
-    //     let sources = [{
+    // it('handles fetchArticles success', () => {
+    //     const store = mockStore({ articles: [] });
+    //     const url = 'https://newsapi.org/v1/articles?source=techcrunch&apiKey=e7e5240e9ad143ae9170058613e5d879';
+    //     let articles = [{
     //                     "id": "abc-news-au",
     //                     "name": "ABC News (AU)"
     //                 },
@@ -32,56 +32,47 @@ describe('Actions::Thunk Async actions', () => {
     //                     "name": "XYZ News (XY)"
     //                 }];
     //     const expectedActions = [
-    //         { type: types.SOURCE_IS_LOADING, "isLoading": true, },
-    //         { type: types.FETCH_SOURCE_DATA_SUCCESS, sources: sources }
+    //         { type: types.ARTICLE_IS_LOADING, "isLoading": true, },
+    //         { type: types.FETCH_ARTICLE_DATA_SUCCESS, articles }
     //         ];
 
     //     fetchMock.get(url, 200);
 
-    //     return store.dispatch(fetchSourceData(url)).then(() => {
+    //     return store.dispatch(actions.fetchArticleData(url)).then(() => {
     //         // return of async actions
     //         expect(expectedActions.length).toBe(2);
     //         expect(store.getActions()).toEqual(expectedActions);
     //       });
     // });
 
-    it('handles fetchSources failure', () => {
-        const store = mockStore();
-        const url = 'http://newsapi.org/v1/sources';
+    it('handles fetchArticles failure', () => {
+        const store = mockStore({ articles: [] });
+        const url = 'https://newsapi.org/v1/articles?source=techcrunch&apiKey=e7e5240e9ad143ae9170058613e5d879';
 
         const expectedActions = [
-            { type: types.SOURCE_IS_LOADING, "isLoading": true, },
-            { type: types.SOURCE_HAS_ERRORED, "hasErrored": true, }
+            { type: types.ARTICLE_IS_LOADING, "isLoading": true, },
+            { type: types.ARTICLE_HAS_ERRORED, "hasErrored": true, }
             ];
 
         fetchMock.get(url, 400);
 
-        return store.dispatch(actions.fetchSourceData(url)).then(() => {
+        return store.dispatch(actions.fetchArticleData(url)).then(() => {
             // return of async actions
             expect(expectedActions.length).toBe(2);
             expect(store.getActions()).toEqual(expectedActions);
           });
     });
 
-    it('fetchSourceData errors when fetch fails', () => {
-        const sources = [{
-            "id": "abc-news-au",
-            "name": "ABC News (AU)"
-        },
-        {
-            "id": "xyz-news-au",
-            "name": "XYZ News (XY)"
-        }];
+    it('fetchArticleData errors when fetch fails', () => {
+        const store = mockStore();
         const expectedAction = [
-            { type: types.SOURCE_IS_LOADING, isLoading: true },
-            { type: types.SOURCE_IS_LOADING, isLoading: false },
-            { type: types.SOURCE_HAS_ERRORED, hasErrored:true }
+            { type: types.ARTICLE_IS_LOADING, isLoading: true },
+            { type: types.ARTICLE_HAS_ERRORED, hasErrored:true }
         ];
-        const url = 'https://newsapi.org/v1/sources-bad-url';
-        fetchMock.getOnce(url, sources);
-        const store = mockStore({ sources: [] });
+        const url = 'https://newsapi.org/v1/articls?source=teccrunch&apiKey=ver-bad-url';
+        fetchMock.getOnce(url, 400);
 
-        return store.dispatch(actions.fetchSourceData(url)).then(() => {
+        return store.dispatch(actions.fetchArticleData(url)).then(() => {
             // return async actions
             expect(store.getActions()).toEqual(expectedAction);
         });
@@ -92,25 +83,25 @@ describe('Actions::pure actions', () => {
     it('should create an isloading action', () => {
         const isLoading = true;
         const expectedAction = {
-            type: types.SOURCE_IS_LOADING,
+            type: types.ARTICLE_IS_LOADING,
             isLoading: true
         };
 
-        expect(actions.sourceIsLoading(isLoading)).toEqual(expectedAction);
+        expect(actions.articleIsLoading(isLoading)).toEqual(expectedAction);
     });
 
     it('should create an hasErrored action', () => {
         const hasErrored = false;
         const expectedAction = {
-            type: types.SOURCE_HAS_ERRORED,
+            type: types.ARTICLE_HAS_ERRORED,
             hasErrored: false
         };
 
-        expect(actions.sourceHasErrored(hasErrored)).toEqual(expectedAction);
+        expect(actions.articleHasErrored(hasErrored)).toEqual(expectedAction);
     });
 
-    // it('should create an fetchSourceDataSuccess action', () => {
-    //     const sources = [{
+    // it('should create an fetchArticleDataSuccess action', () => {
+    //     const articles = [{
     //                             "id": "abc-news-au",
     //                             "name": "ABC News (AU)"
     //                         },
@@ -119,10 +110,10 @@ describe('Actions::pure actions', () => {
     //                             "name": "XYZ News (XY)"
     //                         }];
     //     const expectedAction = {
-    //         type: types.FETCH_SOURCE_DATA_SUCCESS,
-    //         sources
+    //         type: types.FETCH_ARTICLE_DATA_SUCCESS,
+    //         articles
     //     };
 
-    //     expect(actions.fetchSourceDataSuccess(sources)).toEqual(expectedAction);
+    //     expect(actions.fetchArticleDataSuccess(articles)).toEqual(expectedAction);
     // });
 });

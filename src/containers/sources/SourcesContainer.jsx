@@ -5,7 +5,7 @@ import { fetchArticleData } from '../../actions/articles/articlesListActions.jsx
 import PropTypes from 'prop-types';
 import SourcesList from '../../components/sources/SourcesList.jsx';
 
-class SourcesContainer extends React.Component {
+export class SourcesContainer extends React.Component {
     componentDidMount() {
         this.props.fetchData('https://newsapi.org/v1/sources');
     }

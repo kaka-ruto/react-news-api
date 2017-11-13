@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchArticleData } from '../../actions/articles/articlesListActions.jsx';
 import PropTypes from 'prop-types';
-import Source from '../../components/sources/Source.jsx';
 import Articles from '../../components/articles/articlesAll.jsx';
 
 class ArticlesContainer extends React.Component {
@@ -24,9 +23,7 @@ class ArticlesContainer extends React.Component {
         }
 
         return (
-            <div>
-                <Articles articles={this.props.articles} />
-            </div>
+            <Articles articles={this.props.articles} />
         );
     }
 }

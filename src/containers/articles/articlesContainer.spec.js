@@ -2,26 +2,26 @@ import React from 'react';
 import configureMockStore from 'redux-mock-store';
 import {Provider} from 'react-redux';
 import { shallow } from 'enzyme';
-import SourcesContainer from './SourcesContainer.jsx';
+import articleContainer from './articleContainer.jsx';
 
 
-describe('SourcesContainer',() => {
+describe('articleContainer',() => {
 	let mockStore = configureMockStore();
-	let wrapper, store, initialSources;
+	let wrapper, store, initialArticles;
 
 	beforeEach(function() {
-		initialSources = ['one'];
+		initialArticles = ['one'];
 		let initialState = {
-            sources: initialSources,
+            articles: initialArticles,
             hasErrored: false,
             isLoading: false
 		};
         store = mockStore(initialState);
         wrapper = shallow(
             <Provider store={store}>
-                <SourcesContainer/>
+                <articleContainer/>
             </Provider>
-		);
+        );
 	});
 
 	it('renders the smart component',() => {
