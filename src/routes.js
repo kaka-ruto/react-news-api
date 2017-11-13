@@ -1,10 +1,10 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 //Components
-import sourcesListComponent from './components/sources/sourcesListComponent.jsx';
+import sourcesList from './components/sources/SourcesList.jsx';
 
 export default (
-    <Route path = '/sources' component = {sourcesListComponent}>
+    <Route path = '/sources' component = {sourcesList}>
     </Route>
 )

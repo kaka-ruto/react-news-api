@@ -1,23 +1,30 @@
-// import React from 'react';
-// import Provider from 'react-redux';
-// import configureMockStore from 'redux-mock-store';
-// import TestUtils from 'react-test-utils';
+import React from 'react';
+import configureMockStore from 'redux-mock-store';
+import {Provider} from 'react-redux';
+import { shallow } from 'enzyme';
+import SourcesContainer from './SourcesContainer.jsx';
 
-// describe('SourcesContainer', function() {
-// 	var mockStore = configureMockStore();
-// 	var SourcesContainer, store, initialSources;
 
-// 	beforeEach(function() {
-// 		initialItems = ['one'];
-// 		var initialState = {
-// 			sources: initialSources
-// 		}
-// 		store = mockStore(initialState);
-// 	});
+describe('SourcesContainer',() => {
+	let mockStore = configureMockStore();
+	let wrapper, store, initialSources;
 
-// 	describe('state provided by the store', function() {
-// 		beforeEach(function() {
-// 			SourcesContainer = TestUtils.renderIntoDocument(<Provider store={store}><SourcesContainer/></Provider>);
-// 		});
-// 	});
-// })
+	beforeEach(function() {
+		initialSources = ['one'];
+		let initialState = {
+            sources: initialSources,
+            hasErrored: false,
+            isLoading: false
+		};
+        store = mockStore(initialState);
+        wrapper = shallow(
+            <Provider store={store}>
+                <SourcesContainer/>
+            </Provider>
+        );
+	});
+
+	it('renders the smart component',() => {
+		expect(wrapper.length).toEqual(1);
+	});
+});

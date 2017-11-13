@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card } from 'semantic-ui-react';
 
-const Source = ({ onClick, source }) => (
+const Source = ({ onSourceClick, source }) => (
     <div>
         <Card.Group>
-            <Card
-                href={source.url}
+            <Card onClick={onSourceClick(source.id)}
+                /* href={source.url} */
                 header={source.name}
                 meta={source.category}
                 description={source.description}
@@ -17,7 +17,7 @@ const Source = ({ onClick, source }) => (
 
 Source.propTypes = {
     // onClick: PropTypes.func.isRequired,
-    source: PropTypes.array.isRequired
+    source: PropTypes.object.isRequired
 };
 
 export default Source;

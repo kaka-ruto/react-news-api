@@ -1,9 +1,9 @@
 import React from 'react';
-import { Header, List, Card } from 'semantic-ui-react';
+import { Header, List } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import Source from './Source.jsx';
 
-const SourcesList = ({ sources }) => (
+const SourcesList = ({ onSourceClick, sources }) => (
     <div>
         <Header as='h2'>All popular news in one place</Header>
         <Header as='h4'>Choose source</Header>
@@ -12,7 +12,7 @@ const SourcesList = ({ sources }) => (
                 {
                     sources.map((source) => (
                         <li key = {source.id}>
-                        <Source source={source} />
+                            <Source source={source} onSourceClick={onSourceClick} />
                         </li>
                     ))
                 }
@@ -26,10 +26,10 @@ SourcesList.propTypes = {
         PropTypes.shape({
         id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired
+        // description: PropTypes.string.isRequired
         }).isRequired
   ).isRequired,
-//     onSourceClick: PropTypes.func.isRequired
+    onSourceClick: PropTypes.func.isRequired
 };
 
 export default SourcesList;
