@@ -34,12 +34,6 @@ export class SourcesContainer extends React.Component {
     }
 }
 
-SourcesContainer.propTypes = {
-    hasErrored: PropTypes.bool.isRequired,
-    isLoading: PropTypes.bool.isRequired,
-    sources: PropTypes.array.isRequired
-};
-
 const mapStateToProps = (state) => {
     return {
         sources: state.sources,
@@ -53,6 +47,12 @@ const mapDispatchToProps = (dispatch) => {
         fetchData: (url) => dispatch(fetchSourceData(url)),
         fetchArticleData: (url) => dispatch(fetchArticleData(url))
     };
+};
+
+SourcesContainer.propTypes = {
+    hasErrored: PropTypes.bool.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    sources: PropTypes.array.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SourcesContainer);

@@ -28,12 +28,6 @@ class ArticlesContainer extends React.Component {
     }
 }
 
-ArticlesContainer.propTypes = {
-    hasErrored: PropTypes.bool.isRequired,
-    isLoading: PropTypes.bool.isRequired,
-    articles: PropTypes.array.isRequired
-};
-
 const mapStateToProps = (state) => {
     return {
         articles: state.articles,
@@ -46,6 +40,12 @@ const mapDispatchToProps = (dispatch) => {
     return {
         fetchData: (url) => dispatch(fetchArticleData(url))
     };
+};
+
+ArticlesContainer.propTypes = {
+    hasErrored: PropTypes.bool.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    articles: PropTypes.array.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticlesContainer);
