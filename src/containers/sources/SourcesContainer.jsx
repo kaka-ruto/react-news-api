@@ -4,6 +4,8 @@ import { fetchSourceData } from '../../actions/sources/sourcesListActions.jsx';
 import { fetchArticleData } from '../../actions/articles/articlesListActions.jsx';
 import PropTypes from 'prop-types';
 import SourcesList from '../../components/sources/SourcesList.jsx';
+import SearchBar from '../../containers/search/searchContainer.jsx';
+
 
 export class SourcesContainer extends React.Component {
     componentDidMount() {
@@ -14,6 +16,7 @@ export class SourcesContainer extends React.Component {
         e.preventDefault();
         this.props.fetchArticleData(`https://newsapi.org/v1/articles?source=${id}&apiKey=e7e5240e9ad143ae9170058613e5d879`);
     }
+
 
     render() {
         if (this.props.hasErrored) {
@@ -28,8 +31,12 @@ export class SourcesContainer extends React.Component {
             );
         }
 
+        const {search, value} = this.props;
         return (
-            <SourcesList sources={this.props.sources} onSourceClick={this.onSourceClick} />
+            <div>
+                <SearchBar />
+                <SourcesList sources={this.props.sources} onSourceClick={this.onSourceClick} />
+            </div>
         );
     }
 }

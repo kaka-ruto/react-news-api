@@ -12,7 +12,7 @@ const Articles = ({ articles }) => (
             <List>
                 {
                     articles.map((article) => (
-                        <li key={article.id}>
+                        <li key={article.url}>
                             <Article article={article} />
                         </li>
                     ))
@@ -25,8 +25,7 @@ const Articles = ({ articles }) => (
 Articles.propTypes = {
     articles: PropTypes.arrayOf(
         PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired
         }).isRequired
   ).isRequired
