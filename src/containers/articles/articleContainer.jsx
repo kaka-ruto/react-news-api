@@ -10,6 +10,7 @@ class ArticlesContainer extends React.Component {
     }
 
     render() {
+
         if (this.props.hasErrored) {
             return (
                 <p> Sorry an error occured while loading the page </p>
@@ -21,6 +22,12 @@ class ArticlesContainer extends React.Component {
                 <p>Loading Loading </p>
             );
         }
+        // console.log("Articlesclelslsls", this.props)
+
+        // const real = this.props.articles;
+        // console.log("Real Articles", real);
+        // let one = real.articles;
+        // console.log("One", one)
 
         return (
             <Articles articles={this.props.articles} />
