@@ -1,5 +1,5 @@
 import * as actions from './articlesListActions.jsx';
-import * as types from '../../constants/actionTypes/allActionTypes.jsx';
+import * as types from '../../constants/types/types.jsx';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';

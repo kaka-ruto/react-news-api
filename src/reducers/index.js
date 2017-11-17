@@ -2,7 +2,6 @@
  import { combineReducers } from 'redux';
  import { sources, sourceHasErrored, sourceIsLoading } from './sources/sourcesListReducers.jsx';
  import { articles, articleHasErrored, articleIsLoading } from './articles/articlesAllReducers.jsx';
- import { search } from './search/searchReducer.jsx';
 
  export default combineReducers({
      sources,
@@ -10,6 +9,5 @@
      sourceIsLoading,
      articles,
      articleHasErrored,
-     articleIsLoading,
-     search
+     articleIsLoading
  });
