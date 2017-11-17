@@ -2,7 +2,7 @@ import React from 'react';
 import SourcesContainer from '../containers/sources/SourcesContainer.jsx';
 import ArticlesContainer from '../containers/articles/articleContainer.jsx';
 import HeaderNav from './header/HeaderNav.jsx';
-import '../../src/index.scss';
+// import '../../src/index.scss';
 
 const App = () => (
     <div>
