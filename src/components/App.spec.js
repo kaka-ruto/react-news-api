@@ -2,7 +2,15 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App.jsx';
 
-it('App renders without crashing', () => {
+describe('App: The main component', () => {
   const component = shallow(<App />);
-  expect(component.exists()).toEqual(true);
+
+  it('App renders without crashing', () => {
+    expect(component.exists()).toEqual(true);
+  });
+
+  it('Contains three children', () => {
+    console.log('nanaana', component);
+    expect(component.first).toExist()
+  });
 });

@@ -27,15 +27,3 @@ export function sources(state = [], action) {
             return state;
     }
 }
-
-export function selectedSource(state = {}, action) {
-    switch(action.type) {
-        case 'SELECTED_SOURCE':
-            return {
-                id: action.id
-            };
-
-        default:
-            return state;
-    }
-}

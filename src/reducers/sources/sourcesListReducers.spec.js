@@ -1,5 +1,5 @@
 import * as reducers from './sourcesListReducers.jsx';
-import * as types from '../../constants/actionTypes/allActionTypes.jsx';
+import * as types from '../../constants/types/types.jsx';
 
 describe('Reducers: Sources List', () => {
     it('returns proper initial state', () => {

@@ -7,6 +7,7 @@ const Article = ({ article }) => (
         <Card.Group>
             <Card
                 href={article.url}
+                target="_blank"
                 meta={article.author}
                 header={article.title}
                 description={article.description}
