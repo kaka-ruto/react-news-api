@@ -10,7 +10,5 @@ describe('App: The main component', () => {
   });
 
   it('Contains three children', () => {
-    console.log('nanaana', component);
-    expect(component.first).toExist()
   });
 });
