@@ -12,6 +12,16 @@
     float: left;
     max-width: 70%;
     max-height: 100vh;
+    display: inline;
+}
+
+ul.horizontal-list {
+    list-style: none;
+    display: inline;
+}
+
+ul.horizontal-list li{
+    display: inline;
 }
 
 /* .articles .ui.card {

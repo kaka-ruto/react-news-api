@@ -15,7 +15,6 @@ class ArticlesContainer extends React.Component {
     }
     componentDidMount() {
         this.props.fetchData(this.props.articlesUrl);
-        console.log('Props', this.props.articlesUrl)
     }
 
     sortBy = (e, {value}) => {
