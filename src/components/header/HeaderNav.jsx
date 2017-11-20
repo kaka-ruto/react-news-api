@@ -53,6 +53,11 @@ class HeaderNav extends React.Component {
                     </Menu.Item>
 
                     <Menu.Menu position='right'>
+                    <Menu.Item
+                        name='welcome'
+                        >
+                        Welcome, dear reader
+                    </Menu.Item>
                         <Menu.Item
                             name='sign-in'
                             >
