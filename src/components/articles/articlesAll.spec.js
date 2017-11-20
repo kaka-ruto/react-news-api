@@ -31,4 +31,8 @@ describe('All articles Component', () => {
         expect(typeof(wrapper.props()).isObject);
     });
 
+    it('renders a list of elements', () => {
+        // Gooogle how to test for a list of elements, map..
+    });
+
 });

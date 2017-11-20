@@ -3,13 +3,40 @@ import { connect } from 'react-redux';
 import { fetchArticleData } from '../../actions/articles/articlesListActions.jsx';
 import PropTypes from 'prop-types';
 import Articles from '../../components/articles/articlesAll.jsx';
+import * as articleActions from '../../actions/articles/articlesListActions.jsx';
+import { Dropdown } from 'semantic-ui-react';
 
 class ArticlesContainer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: ''
+        }
+    }
     componentDidMount() {
-        this.props.fetchData(`https://newsapi.org/v1/articles?source=techcrunch&apiKey=e7e5240e9ad143ae9170058613e5d879`);
+        this.props.fetchData(this.props.articlesUrl);
+        console.log('Props', this.props.articlesUrl)
+    }
+
+    sortBy = (e, {value}) => {
+        console.log('startedddddd', {value})
+        this.setState({value }, () => {
+            this.props.changeUrl(this.props.articlesUrl + `&sortBy=${value}`);
+            console.log('onclick', this.props.articlesUrl)
+            // console.log('url part', this.props.articlesUr.source)
+            this.props.fetchArticleData(this.props.articlesUrl);
+        })
+        console.log('state', this.state)
     }
 
     render() {
+        const options = [
+            { key: 1, text: 'Top', value: 'top' },
+            { key: 2, text: 'Latest', value: 'latest' },
+            { key: 3, text: 'Popular', value: 'popular' },
+          ]
+          const value = this.state.value;
+
         if (this.props.hasErrored) {
             return (
                 <p> Sorry an error occured while loading the page </p>
@@ -23,7 +50,18 @@ class ArticlesContainer extends React.Component {
         }
 
         return (
-            <Articles articles={this.props.articles} />
+            <div>
+                <Dropdown
+                    onChange={this.sortBy}
+                    options={options}
+                    placeholder='Filter headlines'
+                    selection
+                    value={value}
+                    simple item
+                /> <br/> <br/>
+                <Articles articles={this.props.articles} />
+            </div>
+
         );
     }
 }
@@ -38,13 +76,16 @@ const mapStateToProps = (state) => {
     return {
         articles: state.articles,
         hasErrored: state.articleHasErrored,
-        isLoading: state.articleIsLoading
+        isLoading: state.articleIsLoading,
+        articlesUrl: state.articlesUrl
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: (url) => dispatch(fetchArticleData(url))
+        changeUrl: (url) => dispatch(articleActions.changeUrl(url)),
+        fetchData: (url) => dispatch(fetchArticleData(url)),
+        fetchArticleData: (url) => dispatch(articleActions.fetchArticleData(url))
     };
 };
 

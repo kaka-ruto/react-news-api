@@ -34,7 +34,8 @@ export class SourcesContainer extends React.Component {
 
     onSourceClick = id => e => {
         e.preventDefault();
-        this.props.fetchArticleData(`https://newsapi.org/v1/articles?source=${id}&apiKey=e7e5240e9ad143ae9170058613e5d879`);
+        this.props.changeUrl(`https://newsapi.org/v1/articles?source=${id}&apiKey=e7e5240e9ad143ae9170058613e5d879`);
+        this.props.fetchArticleData(this.props.articlesUrl);
     }
 
     handleChange(event) {
@@ -116,12 +117,14 @@ const mapStateToProps = (state) => {
     return {
         hasErrored: state.sourceHasErrored,
         isLoading: state.sourceIsLoading,
-        sources: state.sources
+        sources: state.sources,
+        articlesUrl: state.articlesUrl
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        changeUrl: (url) => dispatch(articleActions.changeUrl(url)),
         fetchData: (url) => dispatch(sourceActions.fetchSourceData(url)),
         fetchArticleData: (url) => dispatch(articleActions.fetchArticleData(url))
     };

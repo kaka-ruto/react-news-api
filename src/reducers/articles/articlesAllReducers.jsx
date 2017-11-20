@@ -18,6 +18,16 @@ export function articleIsLoading(state = false, action) {
     }
 }
 
+export function articlesUrl(state = `https://newsapi.org/v1/articles?source=techcrunch&apiKey=e7e5240e9ad143ae9170058613e5d879`, action) {
+    switch(action.type) {
+        case 'GET_ARTICLE_URL':
+            return action.articlesUrl;
+
+        default:
+            return state;
+    }
+}
+
 export function articles(state = [], action) {
     switch(action.type) {
         case 'FETCH_ARTICLE_DATA_SUCCESS':
