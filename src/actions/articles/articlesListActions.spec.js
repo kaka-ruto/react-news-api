@@ -111,7 +111,7 @@ describe('Actions::pure actions', () => {
     //                         }];
     //     const expectedAction = {
     //         type: types.FETCH_ARTICLE_DATA_SUCCESS,
-    //         articles
+    //         articles: articles
     //     };
 
     //     expect(actions.fetchArticleDataSuccess(articles)).toEqual(expectedAction);

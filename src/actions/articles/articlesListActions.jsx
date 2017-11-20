@@ -22,6 +22,19 @@ export function fetchArticleDataSuccess(articles) {
     };
 }
 
+export function articlesUrl(articlesUrl) {
+    return {
+        type: 'GET_ARTICLE_URL',
+        articlesUrl
+    }
+}
+
+export function changeUrl(url) {
+    return (dispatch) => {
+        dispatch(articlesUrl(url))
+    }
+}
+
 export function fetchArticleData(url) {
     return (dispatch) => {
         dispatch(articleIsLoading(true));

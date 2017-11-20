@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header, List } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import Article from './article.jsx'
+import Article from './article.jsx';
 
 
 const Articles = ({ articles }) => (
