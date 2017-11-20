@@ -8,7 +8,7 @@ const Articles = ({ articles }) => (
     <div>
         <Header as='h2'>News</Header>
         <Header as='h4'>Choose news</Header>
-        <ul>
+        <ul className='horizontal-list'>
             <List>
                 {
                     articles.map((article) => (
