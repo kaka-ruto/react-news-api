@@ -89,7 +89,7 @@ class HeaderNav extends React.Component {
                             name='sign-in'
                             >
                             <GoogleLogin
-                                clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+                                clientId="35613451563-ku9a585k8l9mekcfpvbpejsoq3f11q98.apps.googleusercontent.com"
                                 buttonText="Login"
                                 onSuccess={this.responseGoogle}
                                 onFailure={this.responseGoogle}
