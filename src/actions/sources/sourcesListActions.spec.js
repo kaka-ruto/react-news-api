@@ -63,23 +63,15 @@ describe('Actions::Thunk Async actions', () => {
           });
     });
 
-    it('fetchSourceData errors when fetch fails', () => {
-        const sources = [{
-            "id": "abc-news-au",
-            "name": "ABC News (AU)"
-        },
-        {
-            "id": "xyz-news-au",
-            "name": "XYZ News (XY)"
-        }];
+    it('fetchSourceData errors when fetch fails due to bad url', () => {
+        let sources = [];
         const expectedAction = [
             { type: types.SOURCE_IS_LOADING, isLoading: true },
-            { type: types.SOURCE_IS_LOADING, isLoading: false },
             { type: types.SOURCE_HAS_ERRORED, hasErrored:true }
         ];
         const url = 'https://newsapi.org/v1/sources-bad-url';
-        fetchMock.getOnce(url, sources);
-        const store = mockStore({ sources: [] });
+        fetchMock.getOnce(url, 400);
+        const store = mockStore(sources);
 
         return store.dispatch(actions.fetchSourceData(url)).then(() => {
             // return async actions

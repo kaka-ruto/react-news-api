@@ -7,7 +7,7 @@ import * as sourceActions from '../../actions/sources/sourcesListActions.jsx';
 import * as articleActions from '../../actions/articles/articlesListActions.jsx';
 import _ from 'lodash';
 
-const WAIT_INTERVAl = 2000;
+const WAIT_INTERVAl = 1000;
 const ENTER_KEY = 13;
 
 export class SourcesContainer extends React.Component {
@@ -96,7 +96,7 @@ export class SourcesContainer extends React.Component {
                 <Input action='Search'
                     placeholder='Search sources... '
                     name="searchString"
-                    value={this.state.searchString}
+                    value={this.state.searchString || ''}
                     onChange={event => this.handleChange(event)}
                     onKeyUp={this.handleKeyUp}
                 />
