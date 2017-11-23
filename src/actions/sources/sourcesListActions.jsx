@@ -18,7 +18,7 @@ export function sourceIsLoading(bool) {
 export function fetchSourceDataSuccess(sources) {
     return {
         type: 'FETCH_SOURCE_DATA_SUCCESS',
-        sources: sources.sources.slice(0, 10)
+        sources: sources.sources
     };
 }
 

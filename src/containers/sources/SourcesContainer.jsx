@@ -33,8 +33,10 @@ export class SourcesContainer extends React.Component {
     }
 
     onSourceClick = id => e => {
+        console.log('ource clicked  ')
         e.preventDefault();
-        this.props.changeUrl(`https://newsapi.org/v1/articles?source=${id}&apiKey=e7e5240e9ad143ae9170058613e5d879`);
+        let newUrl = `https://newsapi.org/v1/articles?source=${id}&apiKey=e7e5240e9ad143ae9170058613e5d879`;
+        this.props.changeUrl(newUrl);
         this.props.fetchArticleData(this.props.articlesUrl);
     }
 
@@ -68,8 +70,6 @@ export class SourcesContainer extends React.Component {
             this.setState({
                 searchResults
             });
-
-            console.log('sea', searchResults)
         }
         else {
             this.setState({
@@ -79,7 +79,6 @@ export class SourcesContainer extends React.Component {
     }
 
     render() {
-        // console.log('onseacg', this.onSearchSources())
         if (this.props.hasErrored) {
             return (
                 <p> Sorry an error occured while loading the page </p>

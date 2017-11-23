@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import Source from './Source.jsx';
 
 export const SourcesList = ({ onSourceClick, sources }) => (
-    <div>
-        <Header as='h2'>All popular news in one place</Header>
-        <Header as='h4'>Choose source</Header>
+    <div className="center aligned">
+        <br/>
+        <Header as='h2'>News Sources</Header>
         <ul>
             <List>
                 {

@@ -17,15 +17,15 @@ class ArticlesContainer extends React.Component {
         this.props.fetchData(this.props.articlesUrl);
     }
 
+    // componentWillUpdate() {
+    //     this.props.fetchArticleData(this.props.articlesUrl);
+    // }
+
     sortBy = (e, {value}) => {
-        console.log('startedddddd', {value})
         this.setState({value }, () => {
             this.props.changeUrl(this.props.articlesUrl + `&sortBy=${value}`);
-            console.log('onclick', this.props.articlesUrl)
-            // console.log('url part', this.props.articlesUr.source)
             this.props.fetchArticleData(this.props.articlesUrl);
-        })
-        console.log('state', this.state)
+        });
     }
 
     render() {

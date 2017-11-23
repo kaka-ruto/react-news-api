@@ -6,8 +6,7 @@ import Article from './article.jsx';
 
 const Articles = ({ articles }) => (
     <div>
-        <Header as='h2'>News</Header>
-        <Header as='h4'>Choose news</Header>
+        <Header as='h2'>Articles</Header>
         <ul className='horizontal-list'>
             <List>
                 {

@@ -47,8 +47,7 @@ class HeaderNav extends React.Component {
                     </Menu.Item>
 
                     <Menu.Item
-                        name='home'
-                        >
+                        name='home'>
                         Home
                     </Menu.Item>
 
@@ -78,9 +77,7 @@ class HeaderNav extends React.Component {
                     </Menu.Item>
 
                     <Menu.Item
-                        name='home'
-                        // onClick={this.handleItemClick}
-                        >
+                        name='home'>
                         Home
                     </Menu.Item>
 
@@ -101,43 +98,5 @@ class HeaderNav extends React.Component {
         }
     }
 }
-
-// const responseGoogle = (response) => {
-//     console.log(response);
-//     console.log(response.isSignedIn);
-//     console.log(response.profileObj);
-//     console.log(response.profileObj.givenName);
-// }
-
-// const HeaderNav = () => {
-//     return (
-//         <Menu stackable>
-//             <Menu.Item>
-//                 <img src={logo} />
-//             </Menu.Item>
-
-//             <Menu.Item
-//                 name='home'
-//                 // onClick={this.handleItemClick}
-//                 >
-//                 Home
-//             </Menu.Item>
-
-//             <Menu.Menu position='right'>
-//                 <Menu.Item
-//                     name='sign-in'
-//                     >
-//                     <GoogleLogin
-//                         clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
-//                         buttonText="Login"
-//                         onSuccess={responseGoogle}
-//                         onFailure={responseGoogle}
-//                     />
-//                     {/* // <Button primary>Login</Button> */}
-//                 </Menu.Item>
-//             </Menu.Menu>
-//       </Menu>
-//     );
-// };
 
 export default HeaderNav;

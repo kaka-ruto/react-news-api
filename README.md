@@ -4,7 +4,7 @@
 [![Dependency Status](https://david-dm.org/borenho/react-news-app.svg?style=flat-square)](https://david-dm.org/borenho/popular-news-app)
 [![Coverage Status](https://coveralls.io/repos/github/borenho/react-bucketlist-api/badge.svg?branch=develop)](https://coveralls.io/github/borenho/react-bucketlist-api?branch=develop)
 
-A ReactJS application that consumes the 'newsApi' API and displays the most popular news to the user.
+A ReactJS + redux front-end that consumes the 'newsApi' API for news articles and their sources, and displays them
 
 1. **One command to get started** - Type `npm start` to start development in your default browser.
 2. **Rapid feedback** - Each time you hit save, changes hot reload and linting and automated tests run.
