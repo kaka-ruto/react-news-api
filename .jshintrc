@@ -1,0 +1,5 @@
+// This file notifies eslint and other concerned programs that this project uses Javascript ES6
+// This will avoid errors with HoundCI also
+{
+    "esversion": 6
+}
