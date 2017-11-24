@@ -1,11 +1,10 @@
-# popular-news-app
+# react-news-app
 
-[![Build status]](https://travis-ci.org/borenho/popular-news-app)
-[![Build status](https://ci.appveyor.com/project/borenho/popular-news-app/branch/master)
-[![Dependency Status](https://david-dm.org/borenho/popular-news-app.svg?style=flat-square)](https://david-dm.org/borenho/popular-news-app)
-[![Coverage Status](https://img.shields.io/coveralls/borenho/popular-news-app/master.svg?style=flat-square)](https://coveralls.io/github/borenho/popular-news-app?branch=master)
+[![Build Status](https://travis-ci.org/borenho/react-news-api.svg?branch=develop)](https://travis-ci.org/borenho/react-news-api)
+[![Dependency Status](https://david-dm.org/borenho/react-news-app.svg?style=flat-square)](https://david-dm.org/borenho/popular-news-app)
+[![Coverage Status](https://coveralls.io/repos/github/borenho/react-bucketlist-api/badge.svg?branch=develop)](https://coveralls.io/github/borenho/react-bucketlist-api?branch=develop)
 
-A ReactJS application that consumes the 'newsApi' API and displays the most popular news to the user.
+A ReactJS + redux front-end that consumes the 'newsApi' API for news articles and their sources, and displays them
 
 1. **One command to get started** - Type `npm start` to start development in your default browser.
 2. **Rapid feedback** - Each time you hit save, changes hot reload and linting and automated tests run.

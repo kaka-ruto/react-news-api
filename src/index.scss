@@ -1,0 +1,25 @@
+.nav {
+    margin-bottom: 20px;
+}
+
+.sources {
+    float: left;
+    min-width: 30%;
+    text-align: center;
+}
+
+.articles {
+    float: left;
+    max-width: 70%;
+    text-align: center;
+
+    .ui.list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -8px; // Adjustment for the gutter
+
+        li {
+            margin: 0 40px 15px 0;
+        }
+    }
+}
